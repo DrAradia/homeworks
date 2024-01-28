@@ -10,4 +10,4 @@ def get_days_from_today(date):
             date=input(f'{date} не відповідає формату дати РРРР-ММ-ДД, введіть іншу дату: ') 
 
 print (get_days_from_today(input('Введіть дату у форматі РРРР-ММ-ДД: ')))
-# шось
+
