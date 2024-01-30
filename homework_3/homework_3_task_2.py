@@ -5,5 +5,6 @@ def get_numbers_ticket(min, max, quantity):
         return []
     uniq_numbers = random.sample(range(min, max+1), quantity)
     return sorted(uniq_numbers)
-numbers_print = get_numbers_ticket(2, 999, 5)
+numbers_print = get_numbers_ticket(2
+                                   , 999, 5)
 print(f"Ваші лотерейні числа: {numbers_print}")
