@@ -9,13 +9,23 @@ def add_contact(args, contacts):
     return "Contact added."
 
 def change_contact(args, contacts):
-    name, phone = args
+    name, new_phone = args
     if name in contacts:
-        contacts[name] = phone
+        contacts[name] = new_phone
         return "Contact updated."
     else:
         return "There's no contact by that name. You can start by adding a contact."
     
+def show_all(contacts):
+    return contacts  
+    
+def show_phone(args, contacts):
+    # name = ''.join(args)
+    name = args[0]
+    if name in contacts:
+        return contacts[name]
+    else:
+        return "There's no contact by that name."          
 
 def main():
     contacts = {}
@@ -32,7 +42,11 @@ def main():
         elif command == "add":
             print(add_contact(args, contacts))
         elif command == "change":
-            print(change_contact(args, contacts))   
+            print(change_contact(args, contacts))  
+        elif command == "all":
+            print(show_all(contacts))   
+        elif command == "phone":
+            print(show_phone(args, contacts))    
         else:
             print("Invalid command.")
 
