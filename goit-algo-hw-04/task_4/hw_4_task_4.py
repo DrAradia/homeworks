@@ -8,6 +8,15 @@ def add_contact(args, contacts):
     contacts[name] = phone
     return "Contact added."
 
+def change_contact(args, contacts):
+    name, phone = args
+    if name in contacts:
+        contacts[name] = phone
+        return "Contact updated."
+    else:
+        return "There's no contact by that name. You can start by adding a contact."
+    
+
 def main():
     contacts = {}
     print("Welcome to the assistant bot!")
@@ -22,6 +31,8 @@ def main():
             print("How can I help you?")
         elif command == "add":
             print(add_contact(args, contacts))
+        elif command == "change":
+            print(change_contact(args, contacts))   
         else:
             print("Invalid command.")
 
