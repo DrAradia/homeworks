@@ -18,8 +18,10 @@ def total_salary(path):
             return (sum(salary), sum(salary)/len(salary)) #(загальна сума зарплат, середня заробітна плата)
     except FileNotFoundError:
         print("Не вдалося знайти файл з зарплатами. Вкажіть правильний шлях")
+        return (0, 0)
     except Exception as e:
         print(f'Помилка {e}')
+        return (0, 0)
 
 total, average = total_salary("./file/salary_file.txt")
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
